@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José W. López Revilla — Médico Infectólogo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d2340;
+    --teal: #1a6b7c;
+    --teal-light: #2a8fa5;
+    --gold: #c8973a;
+    --gold-light: #e8b455;
+    --cream: #f7f4ef;
+    --white: #ffffff;
+    --gray-100: #f0ede8;
+    --gray-300: #c8c4bc;
+    --gray-500: #7a7670;
+    --gray-700: #3d3a35;
+    --text: #1e1c18;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13, 35, 64, 0.97);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 60px;
+    border-bottom: 1px solid rgba(200, 151, 58, 0.25);
+  }
+  .nav-brand {
+    font-family: var(--serif);
+    color: var(--gold-light);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(247, 244, 239, 0.75);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 45%; height: 100%;
+    background: linear-gradient(135deg, transparent 40%, rgba(26, 107, 124, 0.15) 100%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+  .hero-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .avatar {
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    color: var(--cream);
+    border: 3px solid rgba(200, 151, 58, 0.4);
+    flex-shrink: 0;
+    letter-spacing: -0.02em;
+  }
+  .hero-text h1 {
+    font-family: var(--serif);
+    color: var(--white);
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+  }
+  .hero-subtitle {
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+  .hero-tagline {
+    color: rgba(247, 244, 239, 0.7);
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 520px;
+    margin-bottom: 1.8rem;
+    line-height: 1.65;
+  }
+  .hero-contacts {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .contact-pill {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(200, 151, 58, 0.25);
+    border-radius: 100px;
+    padding: 0.35rem 1rem;
+    color: rgba(247, 244, 239, 0.8);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .contact-pill:hover {
+    background: rgba(200, 151, 58, 0.15);
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+  .contact-pill .icon { font-size: 0.9rem; }
+
+  /* SECTIONS */
+  section { padding: 5rem 0; }
+  section:nth-child(even) { background: var(--cream); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
+  }
+
+  /* RESEARCH AREAS */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .research-card {
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: 10px;
+    padding: 1.4rem;
+    border-top: 3px solid var(--teal);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .research-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(13,35,64,0.1);
+  }
+  .research-card h3 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .research-card p {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  /* PUBLICATIONS */
+  .pub-list { display: flex; flex-direction: column; gap: 0; }
+  .pub-item {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--gray-300);
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 1.2rem;
+    align-items: start;
+  }
+  .pub-year {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--gold);
+    font-weight: 600;
+    padding-top: 2px;
+  }
+  .pub-title {
+    font-size: 0.95rem;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+  .pub-journal {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    font-style: italic;
+  }
+  .pub-doi {
+    font-size: 0.78rem;
+    color: var(--teal);
+    text-decoration: none;
+    margin-top: 0.2rem;
+    display: inline-block;
+  }
+  .pub-doi:hover { text-decoration: underline; }
+
+  /* EXPERIENCE */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 7px; top: 6px; bottom: 6px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--teal), var(--gray-300));
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.2rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.93rem; top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 1px var(--teal);
+  }
+  .timeline-org {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+  .timeline-role {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  .timeline-period {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    margin-bottom: 0.4rem;
+  }
+  .timeline-detail {
+    font-size: 0.88rem;
+    color: var(--gray-700);
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(26,107,124,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(26,107,124,0.25);
+    font-size: 0.72rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 100px;
+    margin: 0.15rem 0.15rem 0 0;
+  }
+
+  /* EDUCATION */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+  }
+  .edu-card {
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: 10px;
+    padding: 1.4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gold);
+  }
+  .edu-degree {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+  .edu-school {
+    font-size: 0.82rem;
+    color: var(--teal);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+  }
+  .edu-year {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+  }
+
+  /* MEMBERSHIPS */
+  .member-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.8rem;
+  }
+  .member-item {
+    display: flex; align-items: flex-start; gap: 0.7rem;
+    padding: 0.9rem 1rem;
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-700);
+    line-height: 1.4;
+  }
+  .member-item::before {
+    content: '●';
+    color: var(--teal);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* PROJECTS */
+  .project-item {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--gray-300);
+  }
+  .project-item:last-child { border-bottom: none; }
+  .project-title {
+    font-size: 0.95rem;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+  .project-role {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: rgba(247,244,239,0.5);
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.82rem;
+  }
+  footer a { color: var(--gold-light); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 680px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .avatar { margin: 0 auto; }
+    .hero-contacts { justify-content: center; }
+    nav { padding: 0 1.2rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.72rem; }
+    .container { padding: 0 1.4rem; }
+    section { padding: 3.5rem 0; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar-card { border-radius: 12px; }
+  }
+
+  /* PILLARS */
+  .pillars-wrap {
+    background: var(--cream);
+    padding: 4.5rem 0;
+  }
+  .pillars-intro {
+    text-align: center;
+    margin-bottom: 2.8rem;
+  }
+  .pillars-intro p {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .pillars-intro h2 {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    color: var(--navy);
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+  .pillar-card {
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .pillar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(13,35,64,0.1);
+  }
+  .pillar-header {
+    padding: 1.8rem 1.6rem 1.4rem;
+    position: relative;
+  }
+  .pillar-card:nth-child(1) .pillar-header { border-top: 4px solid var(--teal); }
+  .pillar-card:nth-child(2) .pillar-header { border-top: 4px solid var(--gold); }
+  .pillar-card:nth-child(3) .pillar-header { border-top: 4px solid #5a3e8a; }
+  .pillar-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .pillar-card:nth-child(1) .pillar-icon { background: rgba(26,107,124,0.1); }
+  .pillar-card:nth-child(2) .pillar-icon { background: rgba(200,151,58,0.1); }
+  .pillar-card:nth-child(3) .pillar-icon { background: rgba(90,62,138,0.1); }
+  .pillar-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .pillar-desc {
+    font-size: 0.88rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+  .pillar-body {
+    padding: 0 1.6rem 1.8rem;
+    flex: 1;
+  }
+  .pillar-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .pillar-items li {
+    font-size: 0.84rem;
+    color: var(--gray-700);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.4;
+  }
+  .pillar-items li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .pillar-card:nth-child(1) .pillar-items li::before { background: var(--teal); }
+  .pillar-card:nth-child(2) .pillar-items li::before { background: var(--gold); }
+  .pillar-card:nth-child(3) .pillar-items li::before { background: #5a3e8a; }
+  .pillar-footer {
+    padding: 1rem 1.6rem 1.6rem;
+    border-top: 1px solid var(--gray-100);
+  }
+  .pillar-cta {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: gap 0.2s;
+  }
+  .pillar-card:nth-child(1) .pillar-cta { color: var(--teal); }
+  .pillar-card:nth-child(2) .pillar-cta { color: var(--gold); }
+  .pillar-card:nth-child(3) .pillar-cta { color: #5a3e8a; }
+  .pillar-cta:hover { gap: 0.7rem; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">José W. López Revilla</a>
+  <ul class="nav-links">
+    <li><a href="#research">Investigación</a></li>
+    <li><a href="#publications">Publicaciones</a></li>
+    <li><a href="#experience">Experiencia</a></li>
+    <li><a href="#education">Formación</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="avatar">JL</div>
+    <div class="hero-text">
+      <div class="hero-subtitle">Médico Infectólogo · Profesor Universitario · Investigador</div>
+      <h1>José W. López Revilla</h1>
+      <p class="hero-tagline">
+        Especialista en enfermedades infecciosas y tropicales con más de 15 años de experiencia clínica,
+        investigación traslacional y docencia universitaria. Investigador Principal en estudios
+        multicéntricos sobre resistencia antimicrobiana, tuberculosis e infecciones pediátricas.
+      </p>
+      <div class="hero-contacts">
+        <a class="contact-pill" href="mailto:jlopezre@cientifica.edu.pe">
+          <span class="icon">✉</span> jlopezre@cientifica.edu.pe
+        </a>
+        <a class="contact-pill" href="https://bit.ly/m/ihpr" target="_blank">
+          <span class="icon">🔗</span> Linktree
+        </a>
+        <a class="contact-pill" href="https://www.linkedin.com/in/jos%C3%A9-l%C3%B3pez-revilla-7176a528/" target="_blank">
+          <span class="icon">in</span> LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THREE PILLARS -->
+<div class="pillars-wrap">
+  <div class="pillars-intro">
+    <p>Ámbitos de actividad</p>
+    <h2>Tres dimensiones de práctica profesional</h2>
+  </div>
+  <div class="pillars">
+
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-icon">⚕</div>
+        <div class="pillar-title">Atención Médica</div>
+        <div class="pillar-desc">Práctica clínica especializada en enfermedades infecciosas y tropicales, con énfasis en pacientes pediátricos de alta complejidad.</div>
+      </div>
+      <div class="pillar-body">
+        <ul class="pillar-items">
+          <li>Coordinador de Infectología — INSNSB (2016–actualidad)</li>
+          <li>Diagnóstico y manejo de infecciones oportunistas en inmunocomprometidos</li>
+          <li>Control de infecciones intrahospitalarias y comités farmacoterapéuticos</li>
+          <li>Manejo de tuberculosis, VIH y micosis sistémicas</li>
+          <li>Enfermedades tropicales: bartonelosis, hidatidosis, toxoplasmosis</li>
+          <li>Programas de stewardship antimicrobiano (IMPRESS)</li>
+        </ul>
+      </div>
+      <div class="pillar-footer">
+        <a class="pillar-cta" href="#experience">Ver trayectoria clínica →</a>
+      </div>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-icon">🎓</div>
+        <div class="pillar-title">Académico e Investigación</div>
+        <div class="pillar-desc">Docencia universitaria y producción científica en revistas indexadas de alto impacto a nivel nacional e internacional.</div>
+      </div>
+      <div class="pillar-body">
+        <ul class="pillar-items">
+          <li>Profesor Salud Pública — UCSUR (2018–actualidad)</li>
+          <li>Profesor Pediatría — Universidad de Piura (2022–actualidad)</li>
+          <li>+15 publicaciones en PLoS ONE, Chest, AJRCCM, Clin Infect Dis, Med</li>
+          <li>Investigador Principal en 4 estudios activos multicéntricos</li>
+          <li>Miembro del consorcio ISARIC (COVID-19 global)</li>
+          <li>Financiamientos Grand Challenges Canada · CONCYTEC</li>
+        </ul>
+      </div>
+      <div class="pillar-footer">
+        <a class="pillar-cta" href="#publications">Ver publicaciones →</a>
+      </div>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-icon">💼</div>
+        <div class="pillar-title">Consultoría Especializada</div>
+        <div class="pillar-desc">Asesoría independiente para instituciones de salud, organismos públicos y proyectos de cooperación técnica en enfermedades infecciosas.</div>
+      </div>
+      <div class="pillar-body">
+        <ul class="pillar-items">
+          <li>Asesoría en manejo clínico de enfermedades infecciosas y tropicales</li>
+          <li>Epidemiología de enfermedades infecciosas y vigilancia sanitaria</li>
+          <li>Diseño de programas de control de infecciones institucionales</li>
+          <li>Evaluación de resistencia antimicrobiana</li>
+          <li>Ponencias en congresos nacionales e internacionales</li>
+          <li>Membresías: IDSA · BSAC · SLV · ISARIC</li>
+        </ul>
+      </div>
+      <div class="pillar-footer">
+        <a class="pillar-cta" href="#contact">Solicitar consultoría →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- RESEARCH AREAS -->
+<section id="research">
+  <div class="container">
+    <p class="section-label">Áreas de especialización</p>
+    <h2 class="section-title">Investigación</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <h3>Resistencia Antimicrobiana</h3>
+        <p>Vigilancia multicéntrica, microbiología de patógenos nosocomiales y optimización de programas de stewardship (IMPRESS).</p>
+      </div>
+      <div class="research-card">
+        <h3>Tuberculosis</h3>
+        <p>Biomarcadores diagnósticos, monitoreo de tos y dispositivos point-of-care para TB pulmonar.</p>
+      </div>
+      <div class="research-card">
+        <h3>Infectología Pediátrica</h3>
+        <p>Infecciones oportunistas, profilaxis antifúngica y caracterización clínico-epidemiológica en niños inmunocomprometidos.</p>
+      </div>
+      <div class="research-card">
+        <h3>Epidemiología COVID-19</h3>
+        <p>Caracterización clínica en el protocolo ISARIC-WHO; análisis multicéntrico de hospitalizaciones por estatus vacunal.</p>
+      </div>
+      <div class="research-card">
+        <h3>One Health & Micología</h3>
+        <p>Vigilancia de resistencia en <em>Candida</em> y <em>Aspergillus</em>, muestreo de aguas residuales hospitalarias para nuevos patógenos.</p>
+      </div>
+      <div class="research-card">
+        <h3>Tecnología Diagnóstica</h3>
+        <p>Dispositivos microfluídicos lab-on-a-chip para meningitis y sensibilidad antibiótica en recursos limitados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <p class="section-label">Producción científica</p>
+    <h2 class="section-title">Publicaciones seleccionadas</h2>
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Bartonella henselae encephalitis in pediatric patients</div>
+          <div class="pub-journal">Mori-Llontop LM, Chiara-Chilet C, <strong>López-Revilla J</strong> · Anales de la Facultad de Medicina, pp. 305–309</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Fatal encephalitis caused by free-living amoebas in an infant from Piura, Peru</div>
+          <div class="pub-journal">Mori-Llontop LM, Alaña-Peña VM, …, <strong>López-Revilla J</strong> · Anales de la Facultad de Medicina</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title">Optimising Clinical Epidemiology in Disease Outbreaks: Analysis of ISARIC-WHO COVID-19 Case Report Form Utilisation</div>
+          <div class="pub-journal">Merson L, Duque S, Garcia-Gallo E, …, ISARIC Clinical Characterisation Group · <em>Epidemiologia</em>, 5(3), 557–580</div>
+          <a class="pub-doi" href="https://doi.org/10.3390/epidemiologia5030039" target="_blank">DOI: 10.3390/epidemiologia5030039</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-title">A multi-country analysis of COVID-19 hospitalizations by vaccination status</div>
+          <div class="pub-journal">Gonçalves BP, Jassat W, …, <strong>Lopez JW</strong>, ISARIC Consortium · <em>Med</em>, 4, 797–812</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-title">Brevundimonas spp. infection in immunocompromised children: Two case reports</div>
+          <div class="pub-journal">Altamirano-Beltrán A, Chiara-Chilet C, <strong>López JW</strong>, et al. · <em>GERMS</em>, 13(1), 72–79</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2022</div>
+        <div>
+          <div class="pub-title">Clinical-epidemiological and treatment characteristics of children with COVID-19 in a tertiary referral center in Perú</div>
+          <div class="pub-journal">Chiara Chilet C, Luna Vilchez M, …, <strong>López Revilla JW</strong> · <em>Revista de la Facultad de Medicina Humana</em>, 22(4)</div>
+          <a class="pub-doi" href="https://doi.org/10.25176/RFMH.v22i4.5094" target="_blank">DOI: 10.25176/RFMH.v22i4.5094</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">Clinical characteristics, risk factors and outcomes in patients with severe COVID-19 registered in the ISARIC WHO clinical characterization protocol</div>
+          <div class="pub-journal">Reyes LF, Murthy S, …, <strong>Lopez JW</strong>, et al. · <em>ERJ Open Research</em>, 00552-2021</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2018</div>
+        <div>
+          <div class="pub-title">Exhaled Nitric Oxide as a Biomarker in Pulmonary Tuberculosis</div>
+          <div class="pub-journal"><strong>López JW</strong>, Loader MC, Smith D, et al. · <em>Am J Trop Med Hyg</em></div>
+          <a class="pub-doi" href="https://doi.org/10.4269/ajtmh.17-0425" target="_blank">DOI: 10.4269/ajtmh.17-0425</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2018</div>
+        <div>
+          <div class="pub-title">Platelets regulate pulmonary inflammation and tissue destruction in tuberculosis</div>
+          <div class="pub-journal">Fox K, …, <strong>López JW</strong>, …, Friedland J · <em>Am J Respir Crit Care Med</em></div>
+          <a class="pub-doi" href="https://doi.org/10.1164/rccm.201710-2102OC" target="_blank">DOI: 10.1164/rccm.201710-2102OC</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2017</div>
+        <div>
+          <div class="pub-title">Dynamics of Cough Frequency in Adults Undergoing Treatment for Pulmonary Tuberculosis</div>
+          <div class="pub-journal">Proaño A, Bravard MA, <strong>López JW</strong>, et al. · <em>Clin Infect Dis</em>, 64(9), 1174–1181</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2012</div>
+        <div>
+          <div class="pub-title">Validation of an Automated Cough Detection Algorithm for Tracking Recovery of Pulmonary Tuberculosis Patients</div>
+          <div class="pub-journal">Larson S, …, <strong>Lopez JW</strong>, Gilman RH · <em>PLoS ONE</em>, 7(10): e46229</div>
+          <a class="pub-doi" href="https://doi.org/10.1371/journal.pone.0046229" target="_blank">DOI: 10.1371/journal.pone.0046229</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVE RESEARCH PROJECTS -->
+<section>
+  <div class="container">
+    <p class="section-label">Ciencia en curso</p>
+    <h2 class="section-title">Proyectos activos</h2>
+    <div class="project-item">
+      <div class="project-title">Implementación del Programa de Optimización, Seguimiento y Supervisión de Antimicrobianos en el INSNSB (Estudio IMPRESS)</div>
+      <div class="project-role">Investigador Principal · INSNSB</div>
+    </div>
+    <div class="project-item">
+      <div class="project-title">Muestreo multicéntrico hospitalario y de aguas residuales para la vigilancia de resistencia antimicrobiana y nuevos patógenos</div>
+      <div class="project-role">PI INSNSB · Estudio multicéntrico</div>
+    </div>
+    <div class="project-item">
+      <div class="project-title">Rendimiento del hemocultivo basado en volumen de sangre para el diagnóstico de bacteriemia en pacientes del INSNSB</div>
+      <div class="project-role">Investigador Principal · INSNSB</div>
+    </div>
+    <div class="project-item">
+      <div class="project-title">COVID-19 Largo y prolongado en Lima</div>
+      <div class="project-role">PI INSNSB · Estudio observacional</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Trayectoria profesional</p>
+    <h2 class="section-title">Experiencia clínica y docente</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-org">Universidad Científica del Sur · Universidad de Piura</div>
+        <div class="timeline-role">Profesor Universitario</div>
+        <div class="timeline-period">2018 – Actualidad (UCSUR) · 2022 – Actualidad (UDEP)</div>
+        <div class="timeline-detail">
+          Profesor Coordinador de Salud Pública, Facultad de Ciencias de la Salud (UCSUR). Profesor del Departamento de Pediatría, Facultad de Medicina (Universidad de Piura).
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">Consultor independiente</div>
+        <div class="timeline-role">Consultor en Enfermedades Infecciosas y Tropicales</div>
+        <div class="timeline-period">2023 – Actualidad</div>
+        <div class="timeline-detail">Asesoría en manejo clínico y epidemiología de enfermedades infecciosas para instituciones y entidades privadas.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">Instituto Nacional de Salud del Niño San Borja</div>
+        <div class="timeline-role">Coordinador de Infectología</div>
+        <div class="timeline-period">2016 – Actualidad</div>
+        <div class="timeline-detail">
+          Liderazgo clínico del servicio de infectología pediátrica de referencia nacional.
+          <br>
+          <span class="badge">Dir. Ejecutivo USDyT 2019–2020</span>
+          <span class="badge">Jefe Subunidad I+I 2018–2019</span>
+          <span class="badge">Coordinador TBC-VIH 2016–2021</span>
+          <span class="badge">Pdte. Comité Farmacoterapéutico 2017–2021</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">Hospital Nacional Hipólito Unanue</div>
+        <div class="timeline-role">Médico Asistente — Enfermedades Infecciosas y Tropicales</div>
+        <div class="timeline-period">2013 – 2015</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">Hospital Nacional Dos de Mayo</div>
+        <div class="timeline-role">Médico Asistente · Residencia en Enfermedades Infecciosas</div>
+        <div class="timeline-period">2009 – 2012</div>
+        <div class="timeline-detail">Residencia médica en Enfermedades Infecciosas y Tropicales. Miembro del Comité de Control de Infecciones Intrahospitalarias.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">Fuerza Aérea del Perú</div>
+        <div class="timeline-role">Servicio Rural Médico — Hospital Regional del Norte, Grupo Aéreo N.° 6</div>
+        <div class="timeline-period">2003 – 2004</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <p class="section-label">Formación académica</p>
+    <h2 class="section-title">Educación</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-school">Universidad de San Martín de Porres</div>
+        <div class="edu-degree">Maestría en Gerencia de Servicios de Salud</div>
+        <div class="edu-year">Escuela de Postgrado</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-school">Universidad Peruana Cayetano Heredia</div>
+        <div class="edu-degree">Maestría en Ciencias en Investigación Epidemiológica</div>
+        <div class="edu-year">Escuela de Postgrado — Victor Alzamora Castro</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-school">Universidad Nacional Mayor de San Marcos</div>
+        <div class="edu-degree">Especialidad en Medicina de Enfermedades Infecciosas y Tropicales</div>
+        <div class="edu-year">2006 – 2009</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-school">Universidad Nacional Pedro Ruiz Gallo</div>
+        <div class="edu-degree">Médico Cirujano — Bachiller en Medicina Humana</div>
+        <div class="edu-year">1996 – 2003</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIPS -->
+<section>
+  <div class="container">
+    <p class="section-label">Redes científicas</p>
+    <h2 class="section-title">Membresías y afiliaciones</h2>
+    <div class="member-list">
+      <div class="member-item">Sociedad Peruana de Enfermedades Infecciosas y Tropicales — Miembro titular, Secretario del Comité Científico 2022–2023</div>
+      <div class="member-item">International Severe Acute and Emerging Infection Consortium (ISARIC)</div>
+      <div class="member-item">British Society of Antimicrobial Chemotherapy</div>
+      <div class="member-item">Infectious Diseases Society of America (IDSA)</div>
+      <div class="member-item">Sociedad Latinoamericana de Vacunología (SLV)</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: var(--navy);">
+  <div class="container" style="text-align:center;">
+    <p class="section-label" style="color: var(--gold-light);">Colaboraciones y consultas</p>
+    <h2 class="section-title" style="color: var(--white); margin-bottom:1rem;">Contacto</h2>
+    <p style="color:rgba(247,244,239,0.65); font-size:0.95rem; max-width:520px; margin:0 auto 2rem; font-weight:300;">
+      Disponible para colaboraciones en investigación, ponencias académicas y asesorías en enfermedades infecciosas y tropicales.
+    </p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a class="contact-pill" href="mailto:jlopezre@cientifica.edu.pe" style="font-size:0.9rem; padding:0.55rem 1.4rem;">
+        ✉ jlopezre@cientifica.edu.pe
+      </a>
+      <a class="contact-pill" href="mailto:jolopezr@gmail.com" style="font-size:0.9rem; padding:0.55rem 1.4rem;">
+        ✉ jolopezr@gmail.com
+      </a>
+      <a class="contact-pill" href="https://bit.ly/m/ihpr" target="_blank" style="font-size:0.9rem; padding:0.55rem 1.4rem;">
+        🔗 bit.ly/m/ihpr
+      </a>
+    </div>
+    <p style="color:rgba(247,244,239,0.35); font-size:0.78rem; margin-top:2rem;">
+      INSNSB — Tel. (01) 230-0600 Anexo 4051 · Móvil: 976 187 060
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 José W. López Revilla · Médico Infectólogo, Profesor Universitario</p>
+  <p style="margin-top:0.4rem; font-size:0.75rem;">Alojado en <a href="https://pages.github.com">GitHub Pages</a></p>
+</footer>
+
+</body>
+</html>
