@@ -32,11 +32,11 @@
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'Source Sans 3', system-ui, sans-serif;
   }
-
+ 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     font-family: var(--sans);
     color: var(--text);
@@ -44,7 +44,7 @@
     font-size: 16px;
     line-height: 1.7;
   }
-
+ 
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -75,7 +75,7 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--gold-light); }
-
+ 
   /* HAMBURGER */
   .nav-toggle {
     display: none;
@@ -98,7 +98,7 @@
   .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
   .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
+ 
   /* HERO */
   .hero {
     background: var(--navy);
@@ -185,12 +185,12 @@
     color: var(--gold-light);
   }
   .contact-pill .icon { font-size: 0.9rem; }
-
+ 
   /* SECTIONS */
   section { padding: 5rem 0; }
   section:nth-child(even) { background: var(--cream); }
   .container { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
-
+ 
   .section-label {
     font-size: 0.72rem;
     letter-spacing: 0.16em;
@@ -206,7 +206,7 @@
     margin-bottom: 2.5rem;
     line-height: 1.2;
   }
-
+ 
   /* RESEARCH AREAS */
   .research-grid {
     display: grid;
@@ -237,7 +237,7 @@
     color: var(--gray-500);
     line-height: 1.5;
   }
-
+ 
   /* PUBLICATIONS */
   .pub-list { display: flex; flex-direction: column; gap: 0; }
   .pub-item {
@@ -275,7 +275,7 @@
     display: inline-block;
   }
   .pub-doi:hover { text-decoration: underline; }
-
+ 
   /* EXPERIENCE */
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
@@ -332,7 +332,7 @@
     border-radius: 100px;
     margin: 0.15rem 0.15rem 0 0;
   }
-
+ 
   /* EDUCATION */
   .edu-grid {
     display: grid;
@@ -372,7 +372,7 @@
     font-size: 0.78rem;
     color: var(--gray-500);
   }
-
+ 
   /* MEMBERSHIPS */
   .member-list {
     display: grid;
@@ -395,7 +395,7 @@
     flex-shrink: 0;
     margin-top: 1px;
   }
-
+ 
   /* PROJECTS */
   .project-item {
     padding: 1.2rem 0;
@@ -414,7 +414,7 @@
     color: var(--gold);
     font-weight: 600;
   }
-
+ 
   /* FOOTER */
   footer {
     background: var(--navy);
@@ -424,19 +424,19 @@
     font-size: 0.82rem;
   }
   footer a { color: var(--gold-light); text-decoration: none; }
-
+ 
   /* RESPONSIVE — tablet */
   @media (max-width: 860px) {
     .pillars { grid-template-columns: 1fr 1fr; }
     .hero-text h1 { font-size: 2rem; }
     .section-title { font-size: 1.75rem; }
   }
-
+ 
   /* RESPONSIVE — mobile */
   @media (max-width: 680px) {
     /* Hamburger visible */
     .nav-toggle { display: flex; }
-
+ 
     /* Nav links become vertical dropdown */
     .nav-links {
       display: none;
@@ -460,7 +460,7 @@
     }
     .nav-links a:hover { background: rgba(200,151,58,0.08); }
     nav { padding: 0 1.2rem; }
-
+ 
     /* Hero */
     .hero { padding: 100px 0 55px; }
     .hero-inner {
@@ -475,52 +475,52 @@
     .hero-tagline { font-size: 0.92rem; max-width: 100%; }
     .hero-contacts { justify-content: center; gap: 0.6rem; }
     .contact-pill { font-size: 0.75rem; padding: 0.3rem 0.85rem; }
-
+ 
     /* General layout */
     .container { padding: 0 1.2rem; }
     section { padding: 3rem 0; }
     .section-title { font-size: 1.55rem; margin-bottom: 1.6rem; }
-
+ 
     /* Pillars */
     .pillars-wrap { padding: 3rem 0; }
     .pillars { grid-template-columns: 1fr; padding: 0 1.2rem; gap: 1rem; }
     .pillars-intro h2 { font-size: 1.55rem; }
     .pillar-card { border-radius: 12px; }
-
+ 
     /* Research */
     .research-grid { grid-template-columns: 1fr; gap: 1rem; }
-
+ 
     /* Publications */
     .pub-item { grid-template-columns: 42px 1fr; gap: 0.8rem; }
     .pub-year { font-size: 0.95rem; }
     .pub-title { font-size: 0.88rem; }
-
+ 
     /* Timeline */
     .timeline { padding-left: 1.4rem; }
     .timeline-item::before { left: -1.6rem; }
-
+ 
     /* Education */
     .edu-grid { grid-template-columns: 1fr; }
-
+ 
     /* Memberships */
     .member-list { grid-template-columns: 1fr; }
-
+ 
     /* Contact section */
     #contact .container > div[style] {
       flex-direction: column !important;
       align-items: center !important;
     }
-
+ 
     /* Footer */
     footer { padding: 2rem 1.2rem; }
   }
-
+ 
   /* Extra small phones */
   @media (max-width: 380px) {
     .hero-text h1 { font-size: 1.6rem; }
     .nav-brand { font-size: 0.9rem; }
   }
-
+ 
   /* PILLARS */
   .pillars-wrap {
     background: var(--cream);
@@ -641,7 +641,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <a class="nav-brand" href="#">José W. López Revilla</a>
@@ -656,7 +656,7 @@
     <li><a href="#contact" class="nav-link">Contacto</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
@@ -683,7 +683,7 @@
     </div>
   </div>
 </div>
-
+ 
 <!-- THREE PILLARS -->
 <div class="pillars-wrap">
   <div class="pillars-intro">
@@ -691,7 +691,7 @@
     <h2>Tres dimensiones de práctica profesional</h2>
   </div>
   <div class="pillars">
-
+ 
     <div class="pillar-card">
       <div class="pillar-header">
         <div class="pillar-icon">⚕</div>
@@ -712,7 +712,7 @@
         <a class="pillar-cta" href="#experience">Ver trayectoria clínica →</a>
       </div>
     </div>
-
+ 
     <div class="pillar-card">
       <div class="pillar-header">
         <div class="pillar-icon">🎓</div>
@@ -733,7 +733,7 @@
         <a class="pillar-cta" href="#publications">Ver publicaciones →</a>
       </div>
     </div>
-
+ 
     <div class="pillar-card">
       <div class="pillar-header">
         <div class="pillar-icon">💼</div>
@@ -754,10 +754,10 @@
         <a class="pillar-cta" href="#contact">Solicitar consultoría →</a>
       </div>
     </div>
-
+ 
   </div>
 </div>
-
+ 
 <!-- RESEARCH AREAS -->
 <section id="research">
   <div class="container">
@@ -791,14 +791,14 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- PUBLICATIONS -->
 <section id="publications">
   <div class="container">
     <p class="section-label">Producción científica</p>
     <h2 class="section-title">Publicaciones seleccionadas</h2>
     <div class="pub-list">
-
+ 
       <div class="pub-item">
         <div class="pub-year">2025</div>
         <div>
@@ -806,7 +806,7 @@
           <div class="pub-journal">Mori-Llontop LM, Chiara-Chilet C, <strong>López-Revilla J</strong> · Anales de la Facultad de Medicina, pp. 305–309</div>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2025</div>
         <div>
@@ -814,7 +814,7 @@
           <div class="pub-journal">Mori-Llontop LM, Alaña-Peña VM, …, <strong>López-Revilla J</strong> · Anales de la Facultad de Medicina</div>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2024</div>
         <div>
@@ -823,7 +823,7 @@
           <a class="pub-doi" href="https://doi.org/10.3390/epidemiologia5030039" target="_blank">DOI: 10.3390/epidemiologia5030039</a>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2023</div>
         <div>
@@ -831,7 +831,7 @@
           <div class="pub-journal">Gonçalves BP, Jassat W, …, <strong>Lopez JW</strong>, ISARIC Consortium · <em>Med</em>, 4, 797–812</div>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2023</div>
         <div>
@@ -839,7 +839,7 @@
           <div class="pub-journal">Altamirano-Beltrán A, Chiara-Chilet C, <strong>López JW</strong>, et al. · <em>GERMS</em>, 13(1), 72–79</div>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2022</div>
         <div>
@@ -848,7 +848,7 @@
           <a class="pub-doi" href="https://doi.org/10.25176/RFMH.v22i4.5094" target="_blank">DOI: 10.25176/RFMH.v22i4.5094</a>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2021</div>
         <div>
@@ -856,7 +856,7 @@
           <div class="pub-journal">Reyes LF, Murthy S, …, <strong>Lopez JW</strong>, et al. · <em>ERJ Open Research</em>, 00552-2021</div>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2018</div>
         <div>
@@ -865,7 +865,7 @@
           <a class="pub-doi" href="https://doi.org/10.4269/ajtmh.17-0425" target="_blank">DOI: 10.4269/ajtmh.17-0425</a>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2018</div>
         <div>
@@ -874,7 +874,7 @@
           <a class="pub-doi" href="https://doi.org/10.1164/rccm.201710-2102OC" target="_blank">DOI: 10.1164/rccm.201710-2102OC</a>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2017</div>
         <div>
@@ -882,7 +882,7 @@
           <div class="pub-journal">Proaño A, Bravard MA, <strong>López JW</strong>, et al. · <em>Clin Infect Dis</em>, 64(9), 1174–1181</div>
         </div>
       </div>
-
+ 
       <div class="pub-item">
         <div class="pub-year">2012</div>
         <div>
@@ -891,11 +891,11 @@
           <a class="pub-doi" href="https://doi.org/10.1371/journal.pone.0046229" target="_blank">DOI: 10.1371/journal.pone.0046229</a>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- ACTIVE RESEARCH PROJECTS -->
 <section>
   <div class="container">
@@ -919,14 +919,14 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
     <p class="section-label">Trayectoria profesional</p>
     <h2 class="section-title">Experiencia clínica y docente</h2>
     <div class="timeline">
-
+ 
       <div class="timeline-item">
         <div class="timeline-org">Universidad Científica del Sur · Universidad de Piura</div>
         <div class="timeline-role">Profesor Universitario</div>
@@ -935,14 +935,14 @@
           Profesor Coordinador de Salud Pública, Facultad de Ciencias de la Salud (UCSUR). Profesor del Departamento de Pediatría, Facultad de Medicina (Universidad de Piura).
         </div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-org">Consultor independiente</div>
         <div class="timeline-role">Consultor en Enfermedades Infecciosas y Tropicales</div>
         <div class="timeline-period">2023 – Actualidad</div>
         <div class="timeline-detail">Asesoría en manejo clínico y epidemiología de enfermedades infecciosas para instituciones y entidades privadas.</div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-org">Instituto Nacional de Salud del Niño San Borja</div>
         <div class="timeline-role">Coordinador de Infectología</div>
@@ -956,30 +956,30 @@
           <span class="badge">Pdte. Comité Farmacoterapéutico 2017–2021</span>
         </div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-org">Hospital Nacional Hipólito Unanue</div>
         <div class="timeline-role">Médico Asistente — Enfermedades Infecciosas y Tropicales</div>
         <div class="timeline-period">2013 – 2015</div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-org">Hospital Nacional Dos de Mayo</div>
         <div class="timeline-role">Médico Asistente · Residencia en Enfermedades Infecciosas</div>
         <div class="timeline-period">2009 – 2012</div>
         <div class="timeline-detail">Residencia médica en Enfermedades Infecciosas y Tropicales. Miembro del Comité de Control de Infecciones Intrahospitalarias.</div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-org">Fuerza Aérea del Perú</div>
         <div class="timeline-role">Servicio Rural Médico — Hospital Regional del Norte, Grupo Aéreo N.° 6</div>
         <div class="timeline-period">2003 – 2004</div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- EDUCATION -->
 <section id="education">
   <div class="container">
@@ -1009,7 +1009,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- MEMBERSHIPS -->
 <section>
   <div class="container">
@@ -1024,7 +1024,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact" style="background: var(--navy);">
   <div class="container" style="text-align:center;">
@@ -1049,23 +1049,23 @@
     </p>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <p>© 2026 José W. López Revilla · Médico Infectólogo, Profesor Universitario</p>
   <p style="margin-top:0.4rem; font-size:0.75rem;">Alojado en <a href="https://pages.github.com">GitHub Pages</a></p>
 </footer>
-
+ 
 <script>
   const navToggle = document.getElementById('navToggle');
   const navLinks  = document.getElementById('navLinks');
-
+ 
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
     navToggle.classList.toggle('open', isOpen);
     navToggle.setAttribute('aria-expanded', isOpen);
   });
-
+ 
   // Close menu when any nav link is tapped
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
@@ -1074,7 +1074,7 @@
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
-
+ 
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
@@ -1086,3 +1086,4 @@
 </script>
 </body>
 </html>
+ 
